@@ -75,6 +75,6 @@
         bigPicture.querySelector('.comments-loader').classList.add('.visually-hidden');
 
     }
-        createBigPicture(dataArray);
-        fillingTemplate(dataArray);
+         createBigPicture(dataArray);
+         fillingTemplate(dataArray);
         
