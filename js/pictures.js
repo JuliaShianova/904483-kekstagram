@@ -77,3 +77,4 @@
     }
         createBigPicture(dataArray);
         fillingTemplate(dataArray);
+        /* */
