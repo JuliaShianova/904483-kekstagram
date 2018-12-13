@@ -74,7 +74,63 @@
         bigPicture.querySelector('.social__comment-count').classList.add('.visually-hidden');
         bigPicture.querySelector('.comments-loader').classList.add('.visually-hidden');
 
-    }
-         createBigPicture(dataArray);
-         fillingTemplate(dataArray);
+
+      }
+        fillingTemplate(dataArray);
+
+
+
+
+         function loadingPicture(){
+           var controlLoad = document.querySelector('#upload-file');
+           var formPicture = document.querySelector('.img-upload__overlay ');
+           var closeButton = document.querySelector('#upload-cancel');
+
+           controlLoad.addEventListener('change', function(){
+            formPicture.classList.remove('hidden');
+          });
+          closeButton.addEventListener('click', function(){
+            formPicture.classList.add('hidden');
+          });
+          document.addEventListener('keydown', function(evt){
+          if(evt.keyCode === 27) {
+            formPicture.classList.add('hidden');
+          }
+          });
+         };
+         loadingPicture();
+
+         function overlayEffects(){
+           var button = document.querySelectorAll('.effects__item');
+           var preview = document.querySelector('.img-upload__preview');
+          var сhangeEffects = function(evt){
+            var firstElement = preview.classList[0];
+            preview.classList.remove(firstElement);
+            var effectElement = evt.currentTarget.lastElementChild.lastElementChild;
+            var effect = effectElement.classList[1];
+            preview.classList.add(effect);
+            console.log(effect);
+}
+           for (var i=0; i<button.length; i++){
+             button[i].addEventListener('click', сhangeEffects);
+             button[i].addEventListener('keydown', function(evt){
+              if(evt.keyCode === 13) {
+                changeEffects;
+              }
+            })
+          }
+        }
+overlayEffects();
+function showBigPicture(){
+  var picturesContainer = document.querySelector('.pictures');
+  var userPicture = document.querySelectorAll('a');
+  var bigPicture = document.querySelector('.big-picture');
+  for(var i=0; i<userPicture.length; i++){
+    userPicture[i].addEventListener('click', function(){
+     bigPicture.classList.remove('hidden');
+    })
+  };
+}
+showBigPicture();
+
 
